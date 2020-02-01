@@ -1,80 +1,91 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-  home: Home()
+  home: Ninjacard()
 ));
 
-
-
-
-
-class Home extends StatelessWidget {
+class Ninjacard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900],
       appBar: AppBar(
-        title: Text('Home'),
+        title: Text('Ninja ID Card'),
         centerTitle: true,
-        backgroundColor: Colors.red[400],
+        backgroundColor: Colors.grey[850],
+        elevation: 0.0,
       ),
-//      body: Center(
-//        //=================        text       ====================
-////          child: Text(
-////            'Hello All!',
-////            style: TextStyle(
-////                fontSize: 20.0,
-////                fontWeight: FontWeight.bold,
-////                letterSpacing: 2.0,
-////                color: Colors.grey[600],
-////                fontFamily: 'IndieFlower'
-////            ),
-////          ),
-//       //==================       Images       ==========================
-////          child: Image(
-//////            image: NetworkImage('https://picsum.photos/seed/picsum/200/300'),
-////            image: AssetImage('assets/tree-736885__340.webp'),
-////          )
-//      //===================       Icon         ===========================
-////        child: Icon(
-////          Icons.all_inclusive,
-////          color: Colors.deepOrange,
-////          size: 70.0,
-////        ),
-//      //===================     RaiseButton, FlatButton  ========================
-////        child: FlatButton(
-////            onPressed: () {
-////              print('You clicked me ');
-////            },
-////            child: Text('click me'),
-////            color: Colors.lightBlue,
-////        ),
-//      //===================     Button with icon    ===============================
-////        child: RaisedButton.icon(
-////            onPressed: () {},
-////            icon: Icon(
-////              Icons.mail_outline
-////            ),
-////            label: Text('mail me'),
-////            color: Colors.amberAccent
-////        ),
-//      // ==================     IconButton      ===============================
-////        child: IconButton(
-////          onPressed: () {},
-////          icon: Icon(Icons.offline_bolt),
-////          color: Colors.amberAccent
-////        ),
-//      ),
-      body: Container(
-        color: Colors.grey[400],
-        child: Text('hello'),
-        padding: EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 25),
-        margin: EdgeInsets.all(30),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Text('Click'),
-        backgroundColor: Colors.red[600],
-      ),
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/tree-736885__340.webp'),
+                radius: 40.0
+              ),
+            ),
+            Divider(
+              height: 60.0,
+              color: Colors.grey[800],
+            ),
+            Text(
+              'Name',
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 2.0,
+              ),
+            ),
+            SizedBox(height: 10.0),
+            Text(
+              'Hasibul Hasan',
+              style: TextStyle(
+                color: Colors.orange,
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 30.0),
+            Text(
+              'Occupation',
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 2.0,
+              ),
+            ),
+            SizedBox(height: 10.0),
+            Text(
+              'Sofware Developer',
+              style: TextStyle(
+                color: Colors.orange,
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 30.0,),
+            Row(
+              children: <Widget>[
+                Icon(
+                  Icons.email,
+                  color: Colors.grey[400],
+                ),
+                SizedBox(width: 10.0,),
+                Text(
+                  'Haisbul_uap@gmail.com',
+                  style: TextStyle(
+                    color: Colors.grey[400],
+                    fontSize: 18.0,
+                    letterSpacing: 1.0
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
+      )
     );
   }
 }
